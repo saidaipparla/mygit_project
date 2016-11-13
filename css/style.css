@@ -1,0 +1,149 @@
+/*
+Author: Saida RAO
+Author URI: coming soon
+Description: my git project
+Tags: light, white, single page, multipurpose, multi page, custom-colors, Bootstrap, responsive, html5, css3 , jquery
+Version: 1.0
+*/
+/* Table of Content
+==================================================
+#BASIC TYPOGRAPHY
+#preloader
+#csoon
+*/
+
+/*--------------------*/
+/* BASIC TYPOGRAPHY */
+/*--------------------*/
+
+body,html{
+
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+    overflow-x: hidden !important;
+    color: #838282;
+}
+
+ul{
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+a{
+    text-decoration: none;
+    color: #2f2f2f;
+}
+
+a:focus{
+    outline: none;
+    text-decoration: none;
+}
+
+h1,h2,h3,h4,h5,h6{
+    font-family: 'Lato', sans-serif;
+}
+
+h2 {
+    color: #fff;
+    font-size: 30px;
+    font-weight: 700;
+    line-height: 40px;
+    margin: 0;
+    padding-bottom: 10px;
+}
+
+img{
+ border:none;
+}
+
+/*--------------------*/
+/* preloader  */
+/*--------------------*/
+
+#loader  {
+  position: absolute;
+  background: white url("../images/loader.gif") no-repeat center center;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  background-color: #fff;
+}
+
+/*--------------------*/
+/* csoon */
+/*--------------------*/
+#csoon{
+	font-family: monospace;
+    font-size: smaller;
+    display: inline;
+    float: left;
+    width: 100%;
+    background-image: url("../images/bg1.jpg");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    position: relative;
+}
+#csoon::before {
+    position: absolute;
+    content: "";
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0,0,0,.075);
+}
+.csoon-main {
+    display: inline;
+    float: left;
+    height: 700px;
+    margin-bottom: 0;
+    width: 100%;
+    position: relative;
+}
+.csoon_inner {
+    position: absolute;
+    text-align: center;
+    color: #fff;
+    padding: 2%;
+    top: 25%;
+    left:2%;
+    line-height: 25px;
+}
+.csoon_inner::before {
+    position: absolute;
+    content: "";
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0,0,0,.5);
+}
+
+.hrline {
+    background-color: #f5f5f5;
+    display: inline-block;
+    height: 5px;
+    width: 60px;
+    margin: 20px;
+}
+
+/*Mobile css*/
+@media (max-width: 1000px) {
+    .csoon_inner {
+        position: absolute;
+        text-align: center;
+        color: #fff;
+        padding: 2%;
+        top: 20%;
+        right: 1%;
+        left: 1%;
+        line-height: 25px;
+    }
+}
