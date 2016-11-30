@@ -1,5 +1,1 @@
 dir: js
-packageJson: js/component.js
-articles:
-  - App: README.md
-  - com: js/component.js
