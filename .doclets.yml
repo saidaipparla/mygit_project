@@ -1,4 +1,3 @@
 dir: js
 articles:
   - App: README.md
-  - com: js/component.js
