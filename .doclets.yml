@@ -1,3 +1,5 @@
 dir: js
 files:
   - js/app.js
+articles:
+  -Intro: README.md
