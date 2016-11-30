@@ -1,3 +1,5 @@
 dir: js
 articles:
   - App: README.md
+files
+  -files/component.js
