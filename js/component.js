@@ -1,70 +1,190 @@
-/*testing doclets*/
-const React = require('react');
-const {Button, Glyphicon, Tooltip, OverlayTrigger} = require('react-bootstrap');
-
-const ZoomButton = React.createClass({
-    propTypes: {
-        id: React.PropTypes.string,
-        style: React.PropTypes.object,
-        glyphicon: React.PropTypes.string,
-        text: React.PropTypes.string,
-        btnSize: React.PropTypes.oneOf(['large', 'small', 'xsmall']),
-        className: React.PropTypes.string,
-        help: React.PropTypes.oneOfType([React.PropTypes.string, React.PropTypes.element]),
-        step: React.PropTypes.number,
-        currentZoom: React.PropTypes.number,
-        minZoom: React.PropTypes.number,
-        maxZoom: React.PropTypes.number,
-        onZoom: React.PropTypes.func,
-        tooltip: React.PropTypes.element,
-        tooltipPlace: React.PropTypes.string,
-        bsStyle: React.PropTypes.string
-    },
-    getDefaultProps() {
-        return {
-            id: "mapstore-zoom",
-            className: "square-button",
-            glyphicon: "plus",
-            btnSize: 'xsmall',
-            tooltipPlace: "left",
-            step: 1,
-            currentZoom: 3,
-            minZoom: 0,
-            maxZoom: 28,
-            onZoom: () => {},
-            bsStyle: "default"
-        };
-    },
-    render() {
-        return this.addTooltip(
-            <Button
-                id={this.props.id}
-                style={this.props.style}
-                onClick={() => this.props.onZoom(this.props.currentZoom + this.props.step)}
-                className={this.props.className}
-                tooltip={this.props.tooltip}
-                tooltipPlace="left"
-                disabled={(this.props.currentZoom + this.props.step > this.props.maxZoom) || (this.props.currentZoom + this.props.step < this.props.minZoom)}
-                bsStyle={this.props.bsStyle}
-                >
-                {this.props.glyphicon ? <Glyphicon glyph={this.props.glyphicon}/> : null}
-                {this.props.glyphicon && this.props.text ? "\u00A0" : null}
-                {this.props.text}
-                {this.props.help}
-            </Button>
-        );
-    },
-    addTooltip(btn) {
-        if (!this.props.tooltip) {
-            return btn;
+{
+    "description": "",
+    "methods": [
+        {
+            "name": "addTooltip",
+            "docblock": null,
+            "modifiers": [],
+            "params": [
+                {
+                    "name": "btn",
+                    "type": null
+                }
+            ],
+            "returns": null
         }
-        let tooltip = <Tooltip id="locate-tooltip">{this.props.tooltip}</Tooltip>;
-        return (
-            <OverlayTrigger placement={this.props.tooltipPlace} key={"overlay-trigger." + this.props.id} overlay={tooltip}>
-                {btn}
-            </OverlayTrigger>
-        );
+    ],
+    "props": {
+        "id": {
+            "type": {
+                "name": "string"
+            },
+            "required": false,
+            "description": "",
+            "defaultValue": {
+                "value": "\"mapstore-zoom\"",
+                "computed": false
+            }
+        },
+        "style": {
+            "type": {
+                "name": "object"
+            },
+            "required": false,
+            "description": ""
+        },
+        "glyphicon": {
+            "type": {
+                "name": "string"
+            },
+            "required": false,
+            "description": "",
+            "defaultValue": {
+                "value": "\"plus\"",
+                "computed": false
+            }
+        },
+        "text": {
+            "type": {
+                "name": "string"
+            },
+            "required": false,
+            "description": ""
+        },
+        "btnSize": {
+            "type": {
+                "name": "enum",
+                "value": [
+                    {
+                        "value": "'large'",
+                        "computed": false
+                    },
+                    {
+                        "value": "'small'",
+                        "computed": false
+                    },
+                    {
+                        "value": "'xsmall'",
+                        "computed": false
+                    }
+                ]
+            },
+            "required": false,
+            "description": "",
+            "defaultValue": {
+                "value": "'xsmall'",
+                "computed": false
+            }
+        },
+        "className": {
+            "type": {
+                "name": "string"
+            },
+            "required": false,
+            "description": "",
+            "defaultValue": {
+                "value": "\"square-button\"",
+                "computed": false
+            }
+        },
+        "help": {
+            "type": {
+                "name": "union",
+                "value": [
+                    {
+                        "name": "string"
+                    },
+                    {
+                        "name": "element"
+                    }
+                ]
+            },
+            "required": false,
+            "description": ""
+        },
+        "step": {
+            "type": {
+                "name": "number"
+            },
+            "required": false,
+            "description": "",
+            "defaultValue": {
+                "value": "1",
+                "computed": false
+            }
+        },
+        "currentZoom": {
+            "type": {
+                "name": "number"
+            },
+            "required": false,
+            "description": "",
+            "defaultValue": {
+                "value": "3",
+                "computed": false
+            }
+        },
+        "minZoom": {
+            "type": {
+                "name": "number"
+            },
+            "required": false,
+            "description": "",
+            "defaultValue": {
+                "value": "0",
+                "computed": false
+            }
+        },
+        "maxZoom": {
+            "type": {
+                "name": "number"
+            },
+            "required": false,
+            "description": "",
+            "defaultValue": {
+                "value": "28",
+                "computed": false
+            }
+        },
+        "onZoom": {
+            "type": {
+                "name": "func"
+            },
+            "required": false,
+            "description": "",
+            "defaultValue": {
+                "value": "() => {}",
+                "computed": false
+            }
+        },
+        "tooltip": {
+            "type": {
+                "name": "element"
+            },
+            "required": false,
+            "description": ""
+        },
+        "tooltipPlace": {
+            "type": {
+                "name": "string"
+            },
+            "required": false,
+            "description": "",
+            "defaultValue": {
+                "value": "\"left\"",
+                "computed": false
+            }
+        },
+        "bsStyle": {
+            "type": {
+                "name": "string"
+            },
+            "required": false,
+            "description": "",
+            "defaultValue": {
+                "value": "\"default\"",
+                "computed": false
+            }
+        }
     }
-});
-
-module.exports = ZoomButton;
+}
