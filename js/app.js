@@ -9,7 +9,7 @@ jQuery( document ).ready(function( $ ) {
     });
   });
 	/*for background changing */
-	var images = [ "images/bg.jpg", "images/bg1.jpg"];
+	var images = [ "images/bg.jpg", "images/bg2.jpg"];
 	 var currentImage = 0;
 	 function changeBackground() {
 			 $( '#csoon' ).css( { backgroundImage: 'url(' + images[ ++currentImage ] + ')' } );
