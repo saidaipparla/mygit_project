@@ -147,6 +147,23 @@ img{
     padding: 15px;
 }
 
+section.menu_bar {
+    padding: 15px;
+    background-color: #100c19;
+    color: #fff;
+}
+ul.menu_inner li {
+    float: left;
+    margin-left: 20px;
+    font-size: 20px;
+    text-align: center;
+    text-transform: capitalize;
+    cursor: pointer;
+}
+ul.menu_inner li a, ul.menu_inner li a:hover  {
+  color: #fff;
+  text-decoration: none;
+}
 /*Mobile css*/
 @media (max-width: 1000px) {
     .csoon_inner {
