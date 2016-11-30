@@ -134,6 +134,19 @@ img{
     margin: 20px;
 }
 
+#greeting {
+    top: 0;
+    right: 0;
+    position: fixed;
+    color: #fff;
+    padding: 2%;
+}
+
+#greeting h3 {
+    background-color: #100c0a;
+    padding: 15px;
+}
+
 /*Mobile css*/
 @media (max-width: 1000px) {
     .csoon_inner {
