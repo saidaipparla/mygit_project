@@ -16,7 +16,7 @@ $( ".gauto" ).keyup(function() {
       $.ajax({
         type: "GET",
         url: "https://maps.googleapis.com/maps/api/place/autocomplete/json?"+
-        "input="+ui+"&types=(cities)&language=pt_BR&key=AIzaSyB1xO0ksjZhlpmBPSovLvKjbDXUn2gOYjg",
+        "input="+ui+"&types=(cities)&language=pt_BR&key=apikey",
         cache: false,
         success: function(data){
           handleData(data);
