@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<body>
+  <input type="text" class="gauto" placeholder="search here" />
+  <div class="list"></div>
+</body>
+<script
+  src="https://code.jquery.com/jquery-3.1.1.js"
+  integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA="
+  crossorigin="anonymous"></script>
+<script>
+$( ".gauto" ).keyup(function() {
+  var ui = $(this).val();
+  if(ui.length > 2){
+    function testAjax(handleData) {
+      $.ajax({
+        type: "GET",
+        url: "https://maps.googleapis.com/maps/api/place/autocomplete/json?"+
+        "input="+ui+"&types=(cities)&language=pt_BR&key=AIzaSyB1xO0ksjZhlpmBPSovLvKjbDXUn2gOYjg",
+        cache: false,
+        success: function(data){
+          handleData(data);
+        }
+      });
+    }
+    testAjax(function(output){
+      // here you use the output
+      $( ".list" ).empty();
+      var result = output.predictions;
+      result.forEach(function(item){
+        //console.log(item.description);
+        $( ".list" ).append( "<p>"+item.description+"</p>" );
+      });
+    });
+  }else{
+    $( ".list" ).empty();
+  }
+});
+</script>
+</html>
